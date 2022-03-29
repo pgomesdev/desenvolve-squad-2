@@ -1,0 +1,24 @@
+{
+  "name": "desenvolve-squad-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgomesdev/desenvolve-squad-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pgomesdev/desenvolve-squad-2/issues"
+  },
+  "homepage": "https://github.com/pgomesdev/desenvolve-squad-2#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3"
+  }
+}
