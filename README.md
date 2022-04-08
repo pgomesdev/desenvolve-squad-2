@@ -2,3 +2,5 @@
 
 ## Integrantes
 [Pedro Gomes](https://github.com/pgomesdev)
+
+[Carlos Vieira](https://github.com/carlosvico)
