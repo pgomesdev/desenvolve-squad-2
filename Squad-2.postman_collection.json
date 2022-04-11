@@ -1,0 +1,25 @@
+{
+	"info": {
+		"_postman_id": "84f34d78-96e4-4fac-a97e-6da61b8a2c02",
+		"name": "Squad-2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "pegarUsuarioPorId",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "listaUsuarios",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
