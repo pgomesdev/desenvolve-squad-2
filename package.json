@@ -19,7 +19,11 @@
   "homepage": "https://github.com/pgomesdev/desenvolve-squad-2#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7",
+    "sequelize": "^6.18.0",
+    "sequelize-cli": "^6.4.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.15"
