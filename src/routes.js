@@ -7,6 +7,6 @@ routes.get("/", (req, res) => {
   res.json({ message: "Hello World" });
 });
 
-routes.post("/users", UserController.createUser)
+routes.post("/users", (req, res) => UserController.createUser(req, res))
 
 module.exports = routes;
