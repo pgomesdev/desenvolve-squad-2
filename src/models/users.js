@@ -14,12 +14,58 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Users.init({
-    name: DataTypes.STRING,
-    nickname: DataTypes.STRING,
-    email: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      validate: {
+        checkSize(value) {
+          const names = value.trim().split(' ')
+          if (names.length < 2) {
+            throw new Error("Full name should have at least two names")
+          }
+        }
+      }
+    },
+    nickname: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [2, 15],
+          msg: 'Nickname must have a maximum length of 15 characters'
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: {
+        msg: 'E-mail already in use'
+      },
+      validate: {
+        isEmail: {
+          msg: 'Provide a valid e-mail'
+        },
+      }
+    },
     phone: DataTypes.STRING,
-    company: DataTypes.STRING,
-    password: DataTypes.STRING
+    company: {
+      type: DataTypes.STRING,
+      validate: {
+        len: {
+          args: [2, 15],
+          msg: 'Company name must have a maximum length of 15 characters'
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: {
+          args: 6,
+          msg: 'Password must have at least 6 characters'
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'Users',
