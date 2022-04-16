@@ -8,6 +8,8 @@ const port = parseInt(process.env.NODE_PORT, 10) || 3000;
 
 const app = express();
 
+app.use(express.json())
+
 // routes
 app.use(routes);
 
