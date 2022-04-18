@@ -2,12 +2,14 @@ const { Router, application } = require("express");
 
 const routes = new Router();
 
-const users = [
-  {id: 1, "nome": "Homer Simpson", "email": "hsimpsom@teste.com"},
-  {id: 2, "nome": "Will Smith", "email": "wsimith@teste.com"},
-  {id: 3, "nome": "Sandro Botticellli", "email": "sbotti@teste.com"},
-  {id: 4, "nome": "Raimundo Nonato", "email": "rnonato@teste.com"}
-]
+// array para testes 
+
+// const users = [
+//   {id: 1, "nome": "Homer Simpson", "email": "hsimpsom@teste.com"},
+//   {id: 2, "nome": "Will Smith", "email": "wsimith@teste.com"},
+//   {id: 3, "nome": "Sandro Botticellli", "email": "sbotti@teste.com"},
+//   {id: 4, "nome": "Raimundo Nonato", "email": "rnonato@teste.com"}
+// ]
 
 routes.get("/", (req, res) => {
   res.json({ message: "Hello World" });
