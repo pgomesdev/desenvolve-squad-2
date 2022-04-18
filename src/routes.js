@@ -1,46 +1,16 @@
-const { Router, application } = require("express");
+const { Router } = require("express");
+const UserController = require("./controllers/UserController");
 
 const routes = new Router();
 
-// array para testes 
-
-// const users = [
-//   {id: 1, "nome": "Homer Simpson", "email": "hsimpsom@teste.com"},
-//   {id: 2, "nome": "Will Smith", "email": "wsimith@teste.com"},
-//   {id: 3, "nome": "Sandro Botticellli", "email": "sbotti@teste.com"},
-//   {id: 4, "nome": "Raimundo Nonato", "email": "rnonato@teste.com"}
-// ]
-
-routes.get("/", (req, res) => {
+routes.get("/", (_req, res) => {
   res.json({ message: "Hello World" });
 });
 
 
+routes.get("/users", (req, res) => UserController.listAll(req, res));
 
+routes.get("/users/:id", (req, res) => UserController.getUserById(req, res));
 
-/* -----------------------------
-        Listando usuarios
---------------------------------*/
-routes.get('/users', (req, res) => {
-  res.status(200).json(users);
-})
-
-/* -----------------------------
-        Pega usuarios por Id
---------------------------------*/
-routes.get('/user/:id', (req, res) => {
-  let index = searchUser(req.params.id);
-  res.json(users[index]);
-});
-
-
-
-/* ---------------------------------------------
-        Função que percorre o array de usuarios
-             e localiza um pelo id
------------------------------------------------*/
-function searchUser(id) {
-  return users.findIndex(user => user.id == id);
-}
 
 module.exports = routes;
