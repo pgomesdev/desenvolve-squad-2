@@ -7,10 +7,10 @@ routes.get("/", (_req, res) => {
   res.json({ message: "Hello World" });
 });
 
-routes.post("/users", (req, res) => UserController.createUser(req, res));
+routes.post("/users", UserController.createUser);
 
-routes.put("/users/:id", (req, res) => UserController.updateUser(req, res));
+routes.put("/users/:id", UserController.updateUser);
 
-routes.delete("/users/:id", (req, res) => UserController.deleteUser(req, res));
+routes.delete("/users/:id", UserController.deleteUser);
 
 module.exports = routes;

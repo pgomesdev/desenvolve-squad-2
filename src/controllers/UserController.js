@@ -1,20 +1,21 @@
-const db = require('../models')
+const db = require("../models");
 
 class UserController {
   static async createUser(req, res) {
-    const user = req.body
+    const user = req.body;
 
     try {
-      const createdUser = await db.Users.create(user)
-      return res.status(200).json(createdUser)
+      const createdUser = await db.Users.create(user);
+      return res.status(200).json(createdUser);
     } catch (error) {
-      return res.status(500).json(error.message)
+      return res.status(500).json(error.message);
     }
   }
 
   static async updateUser(req, res) {
     const { id } = req.params;
-    const newInfo = req.body;
+    const { name, nickname, email, phone } = req.body;
+    const newInfo = { name, nickname, email, phone };
     try {
       await db.Users.update(newInfo, { where: { id: Number(id) } });
       const updatedUser = await db.Users.findOne({
@@ -37,4 +38,4 @@ class UserController {
   }
 }
 
-module.exports = UserController
+module.exports = UserController;
