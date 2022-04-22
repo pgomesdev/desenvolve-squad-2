@@ -23,7 +23,7 @@ module.exports = {
       company: {
         type: Sequelize.STRING
       },
-      password: {
+      password_hash: {
         type: Sequelize.STRING
       },
       createdAt: {

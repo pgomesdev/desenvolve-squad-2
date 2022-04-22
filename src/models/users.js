@@ -57,16 +57,7 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     },
-    password: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: {
-          args: 6,
-          msg: 'Password must have at least 6 characters'
-        }
-      }
-    }
+    password_hash: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Users',
