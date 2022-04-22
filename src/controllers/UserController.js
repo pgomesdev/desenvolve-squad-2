@@ -5,8 +5,8 @@ class UserController {
     const user = req.body
 
     try {
-      const createdUser = await db.Users.create(user)
-      return res.status(200).json(createdUser)
+      const { id, name, nickname, email, company } = await db.Users.create(user)
+      return res.status(200).json({ id, name, nickname, email, company })
     } catch (error) {
       return res.status(500).json(error.message)
     }
