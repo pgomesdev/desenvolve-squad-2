@@ -1,6 +1,3 @@
-const path = require('path')
-require('dotenv').config({ path: path.resolve(__dirname, '../../.env') })
-
 module.exports = {
   development: {
     username: process.env.DB_USER,
