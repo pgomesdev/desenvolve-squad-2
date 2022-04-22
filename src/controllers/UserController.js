@@ -16,7 +16,7 @@ class UserController {
       req.body.password_hash = passwordHash
 
       const { id, name, nickname, email, company } = await db.Users.create(req.body)
-      return res.status(200).json({ id, name, nickname, email, company })
+      return res.status(201).json({ id, name, nickname, email, company })
     } catch (error) {
       if (error instanceof WrongSizeException) {
         return res.status(400).json(error.message)  
