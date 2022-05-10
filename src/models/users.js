@@ -18,6 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       validate: {
+        notEmpty: {
+          msg: 'Name must not be empty'
+        },
         checkSize(value) {
           const names = value.trim().split(' ')
           if (names.length < 2) {
@@ -29,6 +32,9 @@ module.exports = (sequelize, DataTypes) => {
     nickname: {
       type: DataTypes.STRING,
       validate: {
+        notEmpty: {
+          msg: 'Nickname must not be empty'
+        },
         len: {
           args: [2, 15],
           msg: 'Nickname must have a maximum length of 15 characters'
@@ -39,9 +45,13 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       unique: {
+        name: 'email',
         msg: 'E-mail already in use'
       },
       validate: {
+        notEmpty: {
+          msg: 'E-mail must not be empty'
+        },
         isEmail: {
           msg: 'Provide a valid e-mail'
         },
@@ -51,6 +61,9 @@ module.exports = (sequelize, DataTypes) => {
     company: {
       type: DataTypes.STRING,
       validate: {
+        notEmpty: {
+          msg: 'Company must not be empty'
+        },
         len: {
           args: [2, 15],
           msg: 'Company name must have a maximum length of 15 characters'
