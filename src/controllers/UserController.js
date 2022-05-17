@@ -13,9 +13,13 @@ class UserController {
       }
 
       const passwordHash = await bcrypt.hash(password, 8)
-      req.body.password_hash = passwordHash
 
-      const { id, name, nickname, email, company } = await db.Users.create(req.body)
+      const newUser = req.body
+      newUser.password_hash = passwordHash
+
+      console.log(newUser)
+
+      const { id, name, nickname, email, company } = await db.Users.create(newUser)
       return res.status(201).json({ id, name, nickname, email, company })
     } catch (error) {
       if (error instanceof WrongSizeException) {
